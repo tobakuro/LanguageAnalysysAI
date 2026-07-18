@@ -1,0 +1,10 @@
+dist
+node_modules
+pnpm-lock.yaml
+.devbox
+.venv
+devbox.lock
+
+*.md
+.github
+devbox.json
