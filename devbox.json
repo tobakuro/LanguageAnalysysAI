@@ -5,16 +5,19 @@
     "gh@latest",
     "nodejs@22",
     "pnpm@latest",
-    "python@3.12"
+    "python@3.12",
+    "uv@latest"
   ],
   "shell": {
     "init_hook": [
+      "export UV_PROJECT_ENVIRONMENT=\"$PWD/training/.venv\"",
       "echo '🚀 Devbox shell に入りました'",
       "echo '📖 よく使うコマンド, サーバー起動手順は docs/commands.md を参照'"
     ],
     "scripts": {
       "setup": [
-        "pnpm install"
+        "pnpm install",
+        "cd training && uv sync"
       ],
       "dev": [
         "pnpm dev"

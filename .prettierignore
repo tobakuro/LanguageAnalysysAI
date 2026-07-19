@@ -4,7 +4,12 @@ pnpm-lock.yaml
 .devbox
 .venv
 devbox.lock
+.claude
 
 *.md
 .github
 devbox.json
+
+# 生成物・学習成果物（PythonやONNX変換スクリプトが出力するJSON）
+training/models
+public/models

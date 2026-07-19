@@ -18,6 +18,15 @@ __pycache__/
 venv/
 .pytest_cache/
 
+# 学習データ（画像はローカルのみ保持、デプロイ対象はONNX変換後のモデルのみ）
+training/data/**/*.jpg
+training/data/**/*.jpeg
+training/data/**/*.png
+!training/data/**/.gitkeep
+
+# 学習成果物（中間生成物）。デプロイ対象は public/models/ にコピーしたものだけをコミットする
+training/models/
+
 # Java
 *.class
 target/
