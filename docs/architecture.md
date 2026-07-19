@@ -12,7 +12,7 @@
 | AI推論 | ONNX Runtime Web（Wasmバックエンド） |
 | モデル訓練 | Python（PyTorch）→ ONNX形式で書き出し |
 | モデルアーキテクチャ | MobileNetV3等の軽量CNN（要検討） |
-| ホスティング | 未定（Vercel, Cloudflare Pages等） |
+| ホスティング | Vercel（GitHub連携による自動デプロイ） |
 
 ## 画面構成
 

@@ -20,6 +20,7 @@ PRラベラー (`.github/workflows/labeler.yml`) や Issue テンプレートで
 | `performance` | `#ff7619` | パフォーマンス改善 |
 | `test` | `#bfd4f2` | テスト関連 |
 | `chore` | `#cccccc` | ビルド・依存関係など |
+| `task` | `#0e8a16` | 開発タスク・作業項目（`task.yml`テンプレートで使用） |
 
 ### 領域系
 
@@ -68,6 +69,7 @@ gh label create "refactor" --color "fbca04" --description "リファクタリン
 gh label create "performance" --color "ff7619" --description "パフォーマンス改善" --force
 gh label create "test" --color "bfd4f2" --description "テスト関連" --force
 gh label create "chore" --color "cccccc" --description "ビルド・依存関係など" --force
+gh label create "task" --color "0e8a16" --description "開発タスク・作業項目" --force
 
 # 領域系
 gh label create "dependencies" --color "0366d6" --description "依存パッケージ更新" --force

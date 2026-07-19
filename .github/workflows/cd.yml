@@ -1,10 +1,10 @@
+# デプロイはVercelのGitHub連携（push/PR自動デプロイ）に任せているため、
+# このワークフローは現在 workflow_dispatch（手動実行）のみに限定している。
+# 自前のCI/CDパイプラインでデプロイを制御したくなった場合、
+# on.push を有効に戻し、下記のBuild/Deployステップを実装すること。
 name: CD
 
 on:
-  push:
-    branches: [main]
-    tags:
-      - "v*.*.*"
   workflow_dispatch:
 
 jobs:
