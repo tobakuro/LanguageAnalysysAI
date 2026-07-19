@@ -22,7 +22,8 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,onnx}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,onnx,wasm}'],
+        maximumFileSizeToCacheInBytes: 16 * 1024 * 1024,
       },
     }),
   ],
