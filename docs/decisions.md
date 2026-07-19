@@ -60,3 +60,14 @@
 **理由**:
 - ユーザーのグローバル規約（`any`禁止・`unknown`使用、厳密な型付け）を機械的に強制するため、typescript-eslintのrecommendedルールセットを採用
 - フォーマットとlintのルールが競合しないよう、ESLint側のスタイルルールはPrettierに譲る構成にした
+
+## 7. ホスティング・CD: Vercel（GitHub連携）を採用、GitHub Actions側のcd.ymlは無効化
+
+**選定**: VercelのGitHub連携機能でpush/PRごとに自動デプロイ。`.github/workflows/cd.yml` は`workflow_dispatch`のみに縮小し、`on.push`を止める
+
+**理由**:
+- Vite標準構成（`vite build` → `dist/`）はVercelが自動検出できるため、追加の設定コストがほぼゼロ
+- Vercel純正連携はPRごとのプレビューデプロイも自動で付くため、実機（スマホ）確認のたびにHTTPS環境をローカルで用意する必要がなくなる
+- GitHub Actions側で同じデプロイを二重に持つと、どちらが本番の実体か曖昧になるため、デプロイの実行主体はVercel側に一本化した
+
+**再検討の条件**: 自前のCI/CDパイプラインでビルド前後の処理（例: モデルファイルの検証、E2Eテスト）を挟みたくなった場合、`cd.yml`の`on.push`を復活させてVercel CLIベースのデプロイに切り替える
